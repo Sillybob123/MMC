@@ -1,4 +1,25 @@
-/* Custom Gradient Text Animation */
+/*
+    Table of Contents:
+    1.  Root Variables & Department Colors
+    2.  Global & Animation Styles
+    3.  Header & Navigation
+    4.  Hero Section
+    5.  Card & Icon Styles (Color-Coded)
+    6.  Testimonial Card
+    7.  Animations (Floating, Gradients)
+*/
+
+/* 1. Root Variables & Department Colors */
+:root {
+    --primary-color: #4A90E2;      /* A calm, trustworthy blue */
+    --sports-color: #27AE60;       /* An energetic, healing green */
+    --derma-color: #E89F8F;        /* A soft, clean peach */
+    --nutrition-color: #7ED321;    /* A vibrant, natural lime green */
+    --occupational-color: #90A4AE; /* A professional, solid gray-blue */
+    --therapy-color: #8E44AD;      /* A deep, restorative purple */
+}
+
+/* 2. Global & Animation Styles */
 .gradient-text {
     background: linear-gradient(135deg, #0d47a1, #1976d2, #2196f3);
     -webkit-background-clip: text;
@@ -7,71 +28,16 @@
     animation: gradientShift 8s ease infinite;
 }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* Header Glass Effect */
+/* 3. Header & Navigation */
 .glass-effect {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(253, 253, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
 
-/* Card Styling & Hover Effect */
-.card {
-    background: white;
-    border-radius: 28px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 24px 48px rgba(13, 71, 161, 0.15);
-}
-
-/* Hero Section Background & Animation */
-.hero-bg {
-    background: linear-gradient(165deg, #f0f7ff 0%, #ffffff 50%, #fafbfc 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-bg::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(13, 71, 161, 0.08) 0%, transparent 70%);
-    animation: pulse 15s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-    50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
-}
-
-/* Icon Gradient Background */
-.icon-gradient {
-    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
-}
-
-/* Testimonial Card Styling */
-.testimonial-card {
-    background: linear-gradient(135deg, rgba(240, 247, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-/* Navigation Link Underline Effect */
 .nav-link {
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
 }
 
 .nav-link::after {
@@ -89,12 +55,82 @@
     width: 100%;
 }
 
-/* Floating Animation for Images */
+/* 4. Hero Section */
+.hero-bg {
+    background: #fdfdff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 100%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.07) 0%, transparent 60%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+/* 5. Card & Icon Styles (Color-Coded) */
+.card {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 4px 24px rgba(0, 30, 80, 0.04);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.icon-wrap {
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Assigning Colors and Hover Glows */
+.card[data-service="primary"] .icon-wrap { background: var(--primary-color); }
+.card[data-service="primary"]:hover { box-shadow: 0 24px 48px rgba(74, 144, 226, 0.15); }
+
+.card[data-service="sports"] .icon-wrap { background: var(--sports-color); }
+.card[data-service="sports"]:hover { box-shadow: 0 24px 48px rgba(39, 174, 96, 0.15); }
+
+.card[data-service="derma"] .icon-wrap { background: var(--derma-color); }
+.card[data-service="derma"]:hover { box-shadow: 0 24px 48px rgba(232, 159, 143, 0.2); }
+
+.card[data-service="nutrition"] .icon-wrap { background: var(--nutrition-color); }
+.card[data-service="nutrition"]:hover { box-shadow: 0 24px 48px rgba(126, 211, 33, 0.15); }
+
+.card[data-service="occupational"] .icon-wrap { background: var(--occupational-color); }
+.card[data-service="occupational"]:hover { box-shadow: 0 24px 48px rgba(144, 164, 174, 0.2); }
+
+.card[data-service="therapy"] .icon-wrap { background: var(--therapy-color); }
+.card[data-service="therapy"]:hover { box-shadow: 0 24px 48px rgba(142, 68, 173, 0.15); }
+
+.card:hover {
+    transform: translateY(-12px);
+}
+
+/* 6. Testimonial Card */
+.testimonial-card {
+    background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* 7. Animations */
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: scale(1.05) rotate(3deg); opacity: 0.8; }
+}
+
 .floating {
-    animation: floating 3s ease-in-out infinite;
+    animation: floating 4s ease-in-out infinite;
 }
 
 @keyframes floating {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
 }
