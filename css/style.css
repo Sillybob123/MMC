@@ -1,0 +1,100 @@
+/* Custom Gradient Text Animation */
+.gradient-text {
+    background: linear-gradient(135deg, #0d47a1, #1976d2, #2196f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Header Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Card Styling & Hover Effect */
+.card {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 24px 48px rgba(13, 71, 161, 0.15);
+}
+
+/* Hero Section Background & Animation */
+.hero-bg {
+    background: linear-gradient(165deg, #f0f7ff 0%, #ffffff 50%, #fafbfc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(13, 71, 161, 0.08) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+}
+
+/* Icon Gradient Background */
+.icon-gradient {
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    background: linear-gradient(135deg, rgba(240, 247, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation Link Underline Effect */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Floating Animation for Images */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
