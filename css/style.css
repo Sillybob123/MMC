@@ -5,8 +5,9 @@
     3.  Header & Navigation
     4.  Hero Section
     5.  Card & Icon Styles (Color-Coded)
-    6.  Testimonial Card
-    7.  Animations (Floating, Gradients)
+    6.  Tabbed Services Component
+    7.  Testimonial Card
+    8.  Animations (Floating, Gradients)
 */
 
 /* 1. Root Variables & Department Colors */
@@ -109,13 +110,55 @@
     transform: translateY(-12px);
 }
 
-/* 6. Testimonial Card */
+/* 6. Tabbed Services Component */
+.tabs-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    background-color: #4A6B82; /* From your screenshot */
+    border-radius: 12px 12px 0 0;
+    padding: 8px;
+}
+
+.tab {
+    padding: 16px 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap; /* Prevents text from wrapping */
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab.active {
+    background-color: white;
+    color: #4A6B82;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tab-panel.hidden {
+    display: none;
+}
+
+
+/* 7. Testimonial Card */
 .testimonial-card {
     background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
     border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
-/* 7. Animations */
+/* 8. Animations */
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
