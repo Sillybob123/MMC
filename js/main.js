@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize the Animate on Scroll (AOS) library
   AOS.init({
-    duration: 1000,      // Animation duration in milliseconds
-    once: true,          // Whether animation should happen only once - while scrolling down
-    offset: 120,         // Offset (in px) from the original trigger point
-    easing: 'ease-out-cubic' // Default easing for AOS animations
+    duration: 1200,                // Slower duration for a more elegant effect
+    once: true,                    // Animation happens only once
+    offset: 100,                   // Trigger animation a little sooner
+    easing: 'ease-in-out-cubic'    // A smooth, graceful easing function
   });
   
 });
